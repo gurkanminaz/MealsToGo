@@ -2,7 +2,7 @@ import React from "react";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.components";
-import { Text } from "../../../typography/text.component";
+import { Text } from "../../../components/typography/text.component";
 import {
   RestaurantCard,
   RestaurantCardCover,
@@ -17,8 +17,9 @@ import {
 } from "./restaurant-info-card.styles";
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
+  //console.log("restaurant", restaurant.item.icon);
   const {
-    name = "Some Restaurant",
+    name,
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",

@@ -17,7 +17,9 @@ const FavouriteButton = styled(TouchableOpacity)`
 export const Favourite = ({ restaurant }) => {
   const { favourites, addToFavourites, removeFromFavourites } =
     useContext(FavouritesContext);
-  const isFavourite = favourites.find((r) => r.placeId === restaurant.placeId);
+  const isFavourite = favourites.filter(
+    (r) => r.placeId === restaurant.placeId
+  ).length;
   return (
     <FavouriteButton
       onPress={() =>

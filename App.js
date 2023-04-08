@@ -35,23 +35,23 @@ const firebaseConfig = {
   appId: REACT_APP_FIREBASE_APP_ID,
 };
 
-if (firebase.apps.length === 0) {
+if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
 //const isAndroid = Platform === "android";
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  useEffect(() => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword("gurkanminaz@gmail.com", "test123")
-      .then((user) => {
-        console.log(user);
-        setIsAuthenticated(true);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // useEffect(() => {
+  //   firebase
+  //     .auth()
+  //     .signInWithEmailAndPassword("gurkanminaz@gmail.com", "test123")
+  //     .then((user) => {
+  //       console.log(user);
+  //       setIsAuthenticated(true);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });

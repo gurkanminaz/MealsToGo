@@ -9,7 +9,7 @@ export const FavouritesContextProvider = ({ children }) => {
       const jsonValue = JSON.stringify(value);
       await AsyncStorage.setItem("@favourites", jsonValue);
     } catch (e) {
-      console.log("error storing", e);
+      console.error("error storing", e);
     }
   };
 
@@ -20,7 +20,7 @@ export const FavouritesContextProvider = ({ children }) => {
         setFavourites(JSON.parse(jsonValue));
       }
     } catch (e) {
-      console.log("error loading", e);
+      console.error("error loading", e);
     }
   };
 

@@ -1,27 +1,12 @@
 import camelize from "camelize";
-
+import { REACT_APP_FIREBASE_SERVE_URL } from "@env";
 export const locationRequest = (searchTerm) => {
-  return fetch(
-    `https://89ad-24-133-244-2.eu.ngrok.io/mealstogo-61869/us-central1/geocode?city=${searchTerm}`
-  )
+  return fetch(`${REACT_APP_FIREBASE_SERVE_URL}/geocode?city=${searchTerm}`)
     .then((res) => {
       return res.json();
     })
-    .catch((err) => {
-      console.log("errorrr");
-      console.log(err);
-    });
+    .catch((err) => console.log("Error locationRequest", err));
 };
-
-// export const locationRequest = (searchTerm) => {
-//   return new Promise((resolve, reject) => {
-//     const locationMock = locations[searchTerm];
-//     if (!locationMock) {
-//       reject("not found");
-//     }
-//     resolve(locationMock);
-//   });
-// };
 
 export const locationTransform = (result) => {
   const formattedResponse = camelize(result);

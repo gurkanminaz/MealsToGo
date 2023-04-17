@@ -1,8 +1,8 @@
 import camelize from "camelize";
-import { REACT_APP_FIREBASE_SERVE_URL } from "@env";
+import { REACT_APP_FIREBASE_SERVE_URL, REACT_APP_IS_MOCK } from "@env";
 export const restaurantsRequest = (location) => {
   return fetch(
-    `${REACT_APP_FIREBASE_SERVE_URL}/placesNearby?location=${location}`
+    `${REACT_APP_FIREBASE_SERVE_URL}/placesNearby?location=${location}&mock=${REACT_APP_IS_MOCK}`
   )
     .then((res) => {
       const result = res.json();

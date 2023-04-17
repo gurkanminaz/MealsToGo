@@ -1,7 +1,9 @@
 import camelize from "camelize";
-import { REACT_APP_FIREBASE_SERVE_URL } from "@env";
+import { REACT_APP_FIREBASE_SERVE_URL, REACT_APP_IS_MOCK } from "@env";
 export const locationRequest = (searchTerm) => {
-  return fetch(`${REACT_APP_FIREBASE_SERVE_URL}/geocode?city=${searchTerm}`)
+  return fetch(
+    `${REACT_APP_FIREBASE_SERVE_URL}/geocode?city=${searchTerm}&mock=${REACT_APP_IS_MOCK}`
+  )
     .then((res) => {
       return res.json();
     })

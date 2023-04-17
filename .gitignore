@@ -20,3 +20,4 @@ web-build/
 ui-debug.log
 functions/ui-debug.log
 functions/firebase-debug.log
+.runtimeconfig.json

@@ -11,6 +11,8 @@ import { FavouritesContextProvider } from "../../services/favourites/favourites.
 import { SettingsNavigator } from "./settings.navigator";
 import { CheckoutNavigator } from "./checkout.navigator";
 import { CartContextProvider } from "../../services/cart/cart.context";
+import { colors } from "../../infrastructure/theme/colors";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -27,8 +29,8 @@ const createScreenOptions = ({ route }) => {
       <Ionicons name={iconName} size={size} color={color} />
     ),
     headerShown: false,
-    tabBarActiveTintColor: "tomato",
-    tabBarInactiveTintColor: "gray",
+    tabBarActiveTintColor: colors.brand.primary,
+    tabBarInactiveTintColor: colors.brand.muted,
   };
 };
 
